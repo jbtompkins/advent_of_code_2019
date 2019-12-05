@@ -6,7 +6,7 @@ Repository for coding solutions/attempts for the Advent of Code 2019
 |      |Part 1|Part 2|
 |------|-----|-----|
 |Day 01| [x] | [x] |
-|Day 02|  |  |
+|Day 02| [x] | [x] |
 |Day 03|  |  |
 |Day 04|  |  |
 |Day 05|  |  |
