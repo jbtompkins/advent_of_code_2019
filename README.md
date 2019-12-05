@@ -26,7 +26,7 @@ Repository for coding solutions/attempts for the Advent of Code 2019
 |Day 19|  |  |
 |Day 20|  |  |
 |Day 21|  |  |
-|Day 02|  |  |
-|Day 03|  |  |
-|Day 04|  |  |
-|Day 05|  |  |
+|Day 22|  |  |
+|Day 23|  |  |
+|Day 24|  |  |
+|Day 25|  |  |
