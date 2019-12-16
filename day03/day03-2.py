@@ -11,6 +11,8 @@ wire0_curpos = [0,0]
 wire1_curpos = [0,0]
 
 # Generate list of positions for wire0
+wire0_pos.append(wire0_curpos[:])
+
 for m in range(len(wire0)):
   for l in range(int(wire0[m][1:])):
     if wire0[m][0] == 'R':
@@ -29,9 +31,14 @@ for m in range(len(wire0)):
 # matches
 dups = []
 dists = []
+wire0_step = 0
+wire1_step = 0
+wire0_x_steps = []
+wire1_x_steps = []
 
 for m in range(len(wire1)):
   for l in range(int(wire1[m][1:])):
+    wire1_step += 1
     if wire1[m][0] == 'R':
       wire1_curpos[0] += 1
     elif wire1[m][0] == 'L':
@@ -42,19 +49,10 @@ for m in range(len(wire1)):
       wire1_curpos[1] -= 1
     else:
       print('ERROR: Invalid movement instructions encountered at ' + str(m))
-    if wire1_curpos in wire0_pos:
-      dists.append(abs(wire1_curpos[0]) + abs(wire1_curpos[1]))
-      dups.append(wire1_curpos[:])
-      print('match at '+str(wire1_curpos)+' Manhattan distance is '+str(dists[-1]))
-
-# Loop through crossing list to find closest
-short_length = 1e6
-short_idx = 1e6
-
-for m in range(len(dups)):
-  length = abs(dups[m][0]) + abs(dups[m][1])
-  if length < short_length:
-    short_length = length
-    short_idx = m
-
-print short_length
+    # Check if wire1 position is in wire0 list of positions
+    cross_check = [i for i, j in enumerate(wire0_pos) if j == wire1_curpos]
+    if len(cross_check) > 0:
+      wire0_x_steps.append(cross_check[0])
+      wire1_x_steps.append(wire1_step)
+      total_steps = cross_check[0] + wire1_step
+      print('Match at '+str(wire1_curpos)+'. Total Steps are '+str(total_steps))
