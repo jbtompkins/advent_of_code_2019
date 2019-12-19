@@ -8,7 +8,7 @@ Repository for coding solutions/attempts for the Advent of Code 2019
 |Day 01| [x] | [x] |
 |Day 02| [x] | [x] |
 |Day 03| [x] | [x] |
-|Day 04|  |  |
+|Day 04| [x] |  |
 |Day 05|  |  |
 |Day 06|  |  |
 |Day 07|  |  |
